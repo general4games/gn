@@ -1,84 +1,205 @@
-<html lang="ar" manifest="cache.manifest" dir="rtl"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mustafa PS4/PS5</title>
-    <link rel="stylesheet" href="includes/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&amp;display=swap" rel="stylesheet">
-    <script>
-        if (window.applicationCache && window.applicationCache.status == 0) {
-            window.location.replace("cache.html");
-        }
-    </script>
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>الجنرال للالعاب الالكترونيه</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Cairo', sans-serif;
+    }
+
+    body {
+        background: linear-gradient(135deg, #0f172a, #020617);
+        color: #fff;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .title {
+        font-size: 22px;
+        color: #38bdf8;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .designer {
+        font-size: 13px;
+        color: #facc15;
+    }
+
+    .blue-line {
+        width: 80px;
+        height: 3px;
+        background: #38bdf8;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 420px;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(12px);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+    }
+
+    .status {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: orange;
+    }
+
+    .device {
+        font-size: 11px;
+        color: #94a3b8;
+        margin: 10px 0;
+        word-break: break-all;
+    }
+
+    .kernel label {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .btn-gold {
+        width: 100%;
+        padding: 12px;
+        border-radius: 12px;
+        border: none;
+        background: linear-gradient(45deg, #facc15, #f59e0b);
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: 0.3s;
+    }
+
+    .btn-gold:hover {
+        transform: scale(1.05);
+    }
+
+    .auto {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .image {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .image img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    pre {
+        background: #020617;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 12px;
+        height: 120px;
+        overflow-y: auto;
+        color: #22c55e;
+        border: 1px solid #38bdf8;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+        margin-top: 10px;
+        color: #64748b;
+    }
+</style>
+
 </head>
+
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <header>
-            <h1>الجنرال للالعاب الالكترونيه <span>--درنه شارع الرفاعي</span></h1>
-            <p class="sub">تصميم طه بن فايد</p>
-            <div class="blue-line"></div>
-        </header>
+<div>
 
-        <div class="card">
+    <header>
+        <h1 class="title">
+            الجنرال للالعاب الالكترونيه
+            <span class="designer">| تصميم طه بن فايد</span>
+        </h1>
+        <div class="blue-line"></div>
+    </header>
 
-            <div class="status">
-                <span class="dot waiting" id="statusDot"></span>
-                <span id="statusText">تغيير: netctrl</span>
-                <span class="ver">v3.0</span>
-            </div>
+    <div class="card">
 
-            <div class="device">
-                <span id="UA">الجهاز: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36</span>
-            </div>
-
-            <div class="options">
-
-                <div class="kernel">
-                    <span>الثغرة:</span>
-                    <form id="kernel-options">
-                        <label>
-                            <input type="radio" name="kernel" id="netctrl-exploit" value="netctrl">
-                            <span>NetCtrl</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="kernel" id="lapse-exploit" value="lapse" checked="">
-                            <span>Lapse</span>
-                        </label>
-                    </form>
-                </div>
-
-                <button id="jeilbrek" class="btn-gold">
-                    تشغيل الاختراق
-                </button>
-
-                <div class="auto">
-                    <label for="autoJbInput" id="autoJbLabel">تلقائي</label>
-                    <input id="autoJbInput" type="checkbox">
-                </div>
-
-            </div>
-
-            <div class="content">
-                <div class="image">
-                    <img src="includes/cat.jpg" alt="Mustafa" onerror="this.style.display='none'">
-                    <span>Mustafa Edition</span>
-                </div>
-                <pre id="console">Mustafa PS4/PS5 جاهز...
-انتظر التنفيذ...</pre>
-            </div>
-
-            <footer>
-                <span>Mustafa</span>
-                <span>|</span>
-                <span>PS4/PS5 Golden</span>
-            </footer>
-
+        <div class="status">
+            <span class="dot"></span>
+            <span id="statusText">الحالة: جاهز</span>
+            <span>v3.0</span>
         </div>
+
+        <div class="device">
+            الجهاز: <span id="UA"></span>
+        </div>
+
+        <div class="kernel">
+            <span>الثغرة:</span>
+            <label><input type="radio" name="kernel" value="netctrl"> NetCtrl</label>
+            <label><input type="radio" name="kernel" value="lapse" checked> Lapse</label>
+        </div>
+
+        <button id="jeilbrek" class="btn-gold">
+            تشغيل الاختراق
+        </button>
+
+        <div class="auto">
+            <label>تلقائي</label>
+            <input type="checkbox">
+        </div>
+
+        <div class="image">
+            <img src="https://i.imgur.com/7QFQZ7T.jpg">
+            <span>Mustafa Edition</span>
+        </div>
+
+        <pre id="console">
+
+Mustafa PS4/PS5 جاهز...
+انتظر التنفيذ...
+</pre>
+
+        <footer>
+           تصميم طه بن فايد
+        </footer>
 
     </div>
 
-    <script src="src/main.js"></script>
-    <script src="includes/script.js"></script>
+</div>
 
-</body></html>
+</div>
+
+<script> document.getElementById("UA").innerText = navigator.userAgent; </script>
+
+</body> </html>
